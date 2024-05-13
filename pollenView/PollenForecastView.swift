@@ -7,7 +7,10 @@
 //
 
 import SwiftUI
+import WidgetKit
 
+
+// Main Pollen Forecast View
 public struct PollenForecastView: View {
     private let forecasts: [PollenForecast] = [
         PollenForecast(date: "Mon", level: 3),
@@ -19,12 +22,6 @@ public struct PollenForecastView: View {
         PollenForecast(date: "Sun", level: 9)
     ]
     
-    private var columns: [GridItem] = [
-        GridItem(.flexible()),
-        GridItem(.flexible()),
-        GridItem(.flexible())
-    ]
-    
     private let maxRows: Int
     
     public init(maxRows: Int = 7) {
@@ -32,28 +29,38 @@ public struct PollenForecastView: View {
     }
     
     public var body: some View {
-        VStack {
-            Text("Pollen Forecast")
-                .font(.headline)
-                .padding(.bottom, 8)
-            
-            LazyVGrid(columns: columns, spacing: 16) {
-                ForEach(forecasts.prefix(maxRows), id: \.date) { forecast in
-                    VStack(spacing: 4) {
-                        PollenIndicator(level: forecast.level)
-                        Text(forecast.date)
-                            .font(.caption)
+        VStack(alignment: .leading, spacing: 4) {
+            if maxRows == 7 {
+                HStack(spacing: 15) {
+                    ForEach(forecasts.prefix(maxRows), id: \.date) { forecast in
+                        VStack(spacing: 10) {
+                            PollenIndicator(level: forecast.level)
+                            Text(forecast.date)
+                                .font(.caption)
+                        }
+                    }
+                }.padding()
+            } else {
+                LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())], spacing: 8) { // Reduced spacing
+                    ForEach(forecasts.prefix(maxRows), id: \.date) { forecast in
+                        VStack(spacing: 2) {
+                            PollenIndicator(level: forecast.level)
+                            Text(forecast.date)
+                                .font(.caption)
+                        }
                     }
                 }
             }
         }
-        .padding()
+        .cornerRadius(10)
+        .shadow(radius: 4)
     }
 }
 
+
 public struct PollenForecast {
     public let date: String
-    public let level: Int // 1 - 9
+    public let level: Int
     
     public init(date: String, level: Int) {
         self.date = date
@@ -61,6 +68,7 @@ public struct PollenForecast {
     }
 }
 
+// MARK: Pollen Indeicator
 public struct PollenIndicator: View {
     let level: Int
     let maxDots = 9
@@ -76,20 +84,18 @@ public struct PollenIndicator: View {
                     Circle()
                         .fill(row * 2 + 1 <= level ? colorForLevel(row * 2 + 1) : Color.gray)
                         .frame(width: 12, height: 12)
-                        .shadow(color: shadowColorForLevel(row * 2 + 1), radius: 4)
+                        .shadow(color: shadowColorForLevel(row * 2 + 1), radius: row * 2 + 1 <= level ? 4 : 0)
                     Circle()
                         .fill(row * 2 + 2 <= level ? colorForLevel(row * 2 + 2) : Color.gray)
                         .frame(width: 12, height: 12)
-                        .shadow(color: shadowColorForLevel(row * 2 + 2), radius: 4)
+                        .shadow(color: shadowColorForLevel(row * 2 + 2), radius: row * 2 + 2 <= level ? 4 : 0)
                 }
             }
         }
     }
     
     func colorForLevel(_ level: Int) -> Color {
-        // Define a gradient that ranges from green to yellow to orange to red
         let gradientColors = [Color.green, Color.yellow, Color.orange, Color.red]
-        
         let stops = gradientColors.count - 1
         let position = Double(level - 1) / Double(maxDots - 1)
         
@@ -97,7 +103,6 @@ public struct PollenIndicator: View {
         let lowerColor = gradientColors[index]
         let upperColor = gradientColors[min(index + 1, stops)]
         
-        // Interpolate between the lower and upper colors
         let ratio = position * Double(stops) - Double(index)
         let interpolatedColor = mixColors(lowerColor, upperColor, ratio: ratio)
         
@@ -109,7 +114,6 @@ public struct PollenIndicator: View {
         return baseColor.opacity(0.6)
     }
     
-    // Helper function to interpolate between two colors
     func mixColors(_ lower: Color, _ upper: Color, ratio: Double) -> Color {
         let lowerUIColor = UIColor(lower)
         let upperUIColor = UIColor(upper)
@@ -141,9 +145,182 @@ extension UIColor {
     }
 }
 
-struct ContentView: View {
+
+//MARK: Pollen Detail Row
+struct PollenDetailRow: View {
+    let level: Double
+    let type: PollenType
+    @Environment(\.widgetFamily) var widgetFamily
+    
+    enum PollenType: Encodable {
+        
+        case grass, mold, tree, ragweed
+        
+        var name: String {
+            switch self {
+            case .grass: return "Grass"
+            case .mold: return "Mold"
+            case .tree: return "Tree"
+            case .ragweed: return "Ragweed"
+            }
+        }
+        var iconName: String {
+            switch self {
+            case .grass: return "leaf"
+            case .mold: return "microbe"
+            case .tree: return "tree"
+            case .ragweed: return "laurel.leading"
+            }
+        }
+        
+        var icon: Image {
+            Image(systemName: iconName)
+        }
+    }
+    
     var body: some View {
-        PollenForecastView()
+        if widgetFamily == .systemSmall {
+            HStack(alignment:.center) {
+                type.icon
+                    .imageScale(.large)
+                    .font(.system(size: 14))
+                    .foregroundColor(.white)
+                Spacer()
+                Text(String(format: "%.1f", level))
+                    .font(.headline)
+                    .foregroundStyle(colorForLevel(level))
+            }
+        } else {
+            HStack {
+                type.icon
+                    .imageScale(.large)
+                    .font(.system(size: 20))
+                    .foregroundStyle(.white)
+                Text(type.name)
+                    .font(.caption)
+                    .foregroundStyle(.white)
+                Text(String(format: "%.1f", level))
+                    .font(.caption)
+                    .foregroundStyle(colorForLevel(level))
+            }
+        }
+    }
+    
+    func colorForLevel(_ level: Double) -> Color {
+        switch level {
+        case 0..<3:
+            return .green
+        case 3..<6:
+            return .yellow
+        case 6..<8:
+            return .orange
+        default:
+            return .red
+        }
     }
 }
 
+
+//MARK: Day View
+struct PollenDayView: View {
+    let forecasts: [DailyPollenForecast]
+    @Environment(\.widgetFamily) var widgetFamily
+    
+    var body: some View {
+        HStack(spacing: 10) {
+            ForEach(forecasts.prefix(dayCount()), id: \.date) { forecast in
+                VStack(alignment: .leading, spacing: 5) {
+                   Text(forecast.date)
+                        .font(widgetFamily == .systemSmall ? .caption : .subheadline)
+                        .foregroundColor(.white)
+                    ForEach(forecast.details, id: \.type) { detail in
+                        PollenDetailRow(level: detail.level, type: detail.type)
+                    }
+                }.padding(.vertical)
+                .frame(maxWidth: .infinity)
+            }
+        }
+        .padding(.vertical)
+        .background(Color.black.opacity(0.8))
+        .cornerRadius(8)
+    }
+    
+    func dayCount() -> Int {
+        switch widgetFamily {
+        case .systemSmall:
+            return 1  // 1 day for small widget
+        case .systemMedium:
+            return 2  // 2 days for medium widget
+        case .systemLarge:
+            return 4  // 4 days for large widget
+        default:
+            return 1
+        }
+    }
+}
+
+struct DailyPollenForecast {
+    let date: String
+    let details: [PollenDetail]
+}
+
+struct PollenDetail {
+    let type: PollenDetailRow.PollenType
+    let level: Double
+}
+
+
+struct ContentView: View {
+    var body: some View {
+        VStack(alignment: .leading, spacing: 15) {
+            HStack(alignment: .center, spacing: 6) {
+                Image(systemName: "circle.hexagongrid")
+                    .foregroundStyle(.white)
+                    .frame(width: 24, height: 24)
+                Text("Pollen Forecast")
+                    .font(.title)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.5)
+                Spacer()
+            }
+            PollenForecastView(maxRows: 7)
+                .background(Color(.systemGray6))
+                .cornerRadius(12)
+                .shadow(radius: 5)
+                .padding([.leading, .trailing])
+            
+            HStack(alignment: .center, spacing: 6) {
+                Image(systemName: "allergens")
+                    .foregroundStyle(.white)
+                    .frame(width: 24, height: 24)
+                Text("Detailed Forecast")
+                    .font(.title2)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.5)
+                Spacer()
+            }
+            ScrollView(.horizontal) {
+                HStack(spacing: 10) {
+                    ForEach(SampleData.generate(), id: \.date) { detail in
+                        PollenDayView(forecasts: [detail]) // Pass only the current day
+                            .padding([.leading, .trailing], 5)
+                    }
+                }
+                .padding(.horizontal)
+            }
+        }
+        .background(Color(.systemGroupedBackground))
+    }
+}
+
+
+extension WidgetFamily: EnvironmentKey {
+    public static var defaultValue: WidgetFamily = .systemSmall
+}
+
+extension EnvironmentValues {
+    var widgetFamily: WidgetFamily {
+        get { self[WidgetFamily.self] }
+        set { self[WidgetFamily.self] = newValue }
+    }
+}

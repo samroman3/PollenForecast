@@ -17,11 +17,13 @@
 		3A0604BA2BF14C3E007EE6A9 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A0604B92BF14C3D007EE6A9 /* WidgetKit.framework */; };
 		3A0604BC2BF14C3E007EE6A9 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A0604BB2BF14C3E007EE6A9 /* SwiftUI.framework */; };
 		3A0604BF2BF14C3E007EE6A9 /* pollenWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0604BE2BF14C3E007EE6A9 /* pollenWidgetBundle.swift */; };
-		3A0604C32BF14C3E007EE6A9 /* pollenWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0604C22BF14C3E007EE6A9 /* pollenWidget.swift */; };
+		3A0604C32BF14C3E007EE6A9 /* PollenForecastWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0604C22BF14C3E007EE6A9 /* PollenForecastWidget.swift */; };
 		3A0604C72BF14C40007EE6A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A0604C62BF14C40007EE6A9 /* Assets.xcassets */; };
 		3A0604CB2BF14C40007EE6A9 /* pollenWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 3A0604B72BF14C3D007EE6A9 /* pollenWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		3A0604D12BF14CDE007EE6A9 /* pollenWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0604C22BF14C3E007EE6A9 /* pollenWidget.swift */; };
 		3A0604D32BF14E9D007EE6A9 /* PollenForecastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A06048E2BF13C2E007EE6A9 /* PollenForecastView.swift */; };
+		3A0604D72BF29430007EE6A9 /* PollenDayWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0604D52BF293D2007EE6A9 /* PollenDayWidget.swift */; };
+		3A0604D92BF2AB75007EE6A9 /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0604D82BF2AB75007EE6A9 /* SampleData.swift */; };
+		3A0604DA2BF2AB81007EE6A9 /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0604D82BF2AB75007EE6A9 /* SampleData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,10 +64,12 @@
 		3A0604B92BF14C3D007EE6A9 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		3A0604BB2BF14C3E007EE6A9 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		3A0604BE2BF14C3E007EE6A9 /* pollenWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pollenWidgetBundle.swift; sourceTree = "<group>"; };
-		3A0604C22BF14C3E007EE6A9 /* pollenWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pollenWidget.swift; sourceTree = "<group>"; };
+		3A0604C22BF14C3E007EE6A9 /* PollenForecastWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollenForecastWidget.swift; sourceTree = "<group>"; };
 		3A0604C62BF14C40007EE6A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A0604C82BF14C40007EE6A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A0604D22BF14E36007EE6A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		3A0604D52BF293D2007EE6A9 /* PollenDayWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollenDayWidget.swift; sourceTree = "<group>"; };
+		3A0604D82BF2AB75007EE6A9 /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				3A0604D22BF14E36007EE6A9 /* Info.plist */,
+				3A0604D82BF2AB75007EE6A9 /* SampleData.swift */,
 				3A06048E2BF13C2E007EE6A9 /* PollenForecastView.swift */,
 				3A0604902BF13C98007EE6A9 /* pollenApp.swift */,
 				3A0604842BF134BB007EE6A9 /* Assets.xcassets */,
@@ -167,7 +172,8 @@
 			isa = PBXGroup;
 			children = (
 				3A0604BE2BF14C3E007EE6A9 /* pollenWidgetBundle.swift */,
-				3A0604C22BF14C3E007EE6A9 /* pollenWidget.swift */,
+				3A0604C22BF14C3E007EE6A9 /* PollenForecastWidget.swift */,
+				3A0604D52BF293D2007EE6A9 /* PollenDayWidget.swift */,
 				3A0604C62BF14C40007EE6A9 /* Assets.xcassets */,
 				3A0604C82BF14C40007EE6A9 /* Info.plist */,
 			);
@@ -306,7 +312,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A06048F2BF13C2E007EE6A9 /* PollenForecastView.swift in Sources */,
-				3A0604D12BF14CDE007EE6A9 /* pollenWidget.swift in Sources */,
+				3A0604D92BF2AB75007EE6A9 /* SampleData.swift in Sources */,
 				3A0604912BF13C98007EE6A9 /* pollenApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -323,8 +329,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A0604C32BF14C3E007EE6A9 /* pollenWidget.swift in Sources */,
+				3A0604D72BF29430007EE6A9 /* PollenDayWidget.swift in Sources */,
+				3A0604C32BF14C3E007EE6A9 /* PollenForecastWidget.swift in Sources */,
 				3A0604BF2BF14C3E007EE6A9 /* pollenWidgetBundle.swift in Sources */,
+				3A0604DA2BF2AB81007EE6A9 /* SampleData.swift in Sources */,
 				3A0604D32BF14E9D007EE6A9 /* PollenForecastView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

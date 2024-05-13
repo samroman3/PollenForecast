@@ -11,7 +11,7 @@ import SwiftUI
 struct PollenApp: App {
     var body: some Scene {
         WindowGroup {
-            PollenForecastView()
+            ContentView()
         }
     }
 }
