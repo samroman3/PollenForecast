@@ -8,77 +8,57 @@
 import WidgetKit
 import SwiftUI
 
-struct Provider: AppIntentTimelineProvider {
-    func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date(), configuration: ConfigurationAppIntent())
-    }
+struct PollenWidgetEntryView: View {
+    var entry: SimpleEntry
 
-    func snapshot(for configuration: ConfigurationAppIntent, in context: Context) async -> SimpleEntry {
-        SimpleEntry(date: Date(), configuration: configuration)
+    var body: some View {
+        GeometryReader { geometry in
+                PollenForecastView(maxRows: maxRowsForSize(geometry.size))
+                    .containerBackground(.black, for: .widget)
+        }
     }
     
-    func timeline(for configuration: ConfigurationAppIntent, in context: Context) async -> Timeline<SimpleEntry> {
-        var entries: [SimpleEntry] = []
-
-        // Generate a timeline consisting of five entries an hour apart, starting from the current date.
-        let currentDate = Date()
-        for hourOffset in 0 ..< 5 {
-            let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-            let entry = SimpleEntry(date: entryDate, configuration: configuration)
-            entries.append(entry)
+    // Determines the maximum number of rows based on widget size
+    func maxRowsForSize(_ size: CGSize) -> Int {
+        switch size.height {
+        case 0..<150:
+            return 3
+        case 150..<300:
+            return 4
+        default:
+            return 7
         }
-
-        return Timeline(entries: entries, policy: .atEnd)
     }
 }
 
 struct SimpleEntry: TimelineEntry {
     let date: Date
-    let configuration: ConfigurationAppIntent
 }
 
-struct pollenWidgetEntryView : View {
-    var entry: Provider.Entry
+struct Provider: TimelineProvider {
+    func placeholder(in context: Context) -> SimpleEntry {
+        SimpleEntry(date: Date())
+    }
 
-    var body: some View {
-        VStack {
-            Text("Time:")
-            Text(entry.date, style: .time)
+    func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> Void) {
+        completion(SimpleEntry(date: Date()))
+    }
 
-            Text("Favorite Emoji:")
-            Text(entry.configuration.favoriteEmoji)
-        }
+    func getTimeline(in context: Context, completion: @escaping (Timeline<SimpleEntry>) -> Void) {
+        let entries = [SimpleEntry(date: Date())]
+        completion(Timeline(entries: entries, policy: .atEnd))
     }
 }
 
-struct pollenWidget: Widget {
-    let kind: String = "pollenWidget"
+struct PollenWidget: Widget {
+    let kind: String = "PollenWidget"
 
     var body: some WidgetConfiguration {
-        AppIntentConfiguration(kind: kind, intent: ConfigurationAppIntent.self, provider: Provider()) { entry in
-            pollenWidgetEntryView(entry: entry)
-                .containerBackground(.fill.tertiary, for: .widget)
+        StaticConfiguration(kind: kind, provider: Provider()) { entry in
+            PollenWidgetEntryView(entry: entry)
         }
+        .configurationDisplayName("Pollen Forecast Widget")
+        .description("Displays the pollen forecast for the next 7 days.")
+        .supportedFamilies([.systemSmall, .systemMedium, .systemLarge])
     }
-}
-
-extension ConfigurationAppIntent {
-    fileprivate static var smiley: ConfigurationAppIntent {
-        let intent = ConfigurationAppIntent()
-        intent.favoriteEmoji = "😀"
-        return intent
-    }
-    
-    fileprivate static var starEyes: ConfigurationAppIntent {
-        let intent = ConfigurationAppIntent()
-        intent.favoriteEmoji = "🤩"
-        return intent
-    }
-}
-
-#Preview(as: .systemSmall) {
-    pollenWidget()
-} timeline: {
-    SimpleEntry(date: .now, configuration: .smiley)
-    SimpleEntry(date: .now, configuration: .starEyes)
 }

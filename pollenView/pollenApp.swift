@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-struct pollenApp: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+@main
+struct PollenApp: App {
+    var body: some Scene {
+        WindowGroup {
+            PollenForecastView()
+        }
     }
 }
 
-#Preview {
-    pollenApp()
-}

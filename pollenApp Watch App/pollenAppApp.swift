@@ -6,12 +6,28 @@
 //
 
 import SwiftUI
-
-@main
-struct pollenApp_Watch_AppApp: App {
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-        }
-    }
-}
+//
+//@main
+//struct PollenWatchApp: App {
+//    @SceneBuilder var body: some Scene {
+//        WindowGroup {
+//            NavigationView {
+//                PollenForecastView()
+//            }
+//        }
+//
+//        WKNotificationScene(controller: NotificationController.self, category: "myCategory")
+//    }
+//}
+//
+//struct NotificationController: WKUserNotificationHostingController<NotificationView> {
+//    override var body: NotificationView {
+//        return NotificationView()
+//    }
+//}
+//
+//struct NotificationView: View {
+//    var body: some View {
+//        Text("Pollen Forecast Notification")
+//    }
+//}

@@ -9,9 +9,8 @@ import WidgetKit
 import SwiftUI
 
 @main
-struct pollenWidgetBundle: WidgetBundle {
+struct PollenWidgetBundle: WidgetBundle {
     var body: some Widget {
-        pollenWidget()
-        pollenWidgetLiveActivity()
+        PollenWidget()
     }
 }

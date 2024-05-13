@@ -7,20 +7,65 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3A06047F2BF134B9007EE6A9 /* pollenViewApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A06047E2BF134B9007EE6A9 /* pollenViewApp.swift */; };
-		3A0604812BF134B9007EE6A9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0604802BF134B9007EE6A9 /* ContentView.swift */; };
-		3A0604832BF134B9007EE6A9 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0604822BF134B9007EE6A9 /* Item.swift */; };
 		3A0604852BF134BB007EE6A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A0604842BF134BB007EE6A9 /* Assets.xcassets */; };
 		3A0604882BF134BB007EE6A9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A0604872BF134BB007EE6A9 /* Preview Assets.xcassets */; };
+		3A06048F2BF13C2E007EE6A9 /* PollenForecastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A06048E2BF13C2E007EE6A9 /* PollenForecastView.swift */; };
+		3A0604912BF13C98007EE6A9 /* pollenApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0604902BF13C98007EE6A9 /* pollenApp.swift */; };
+		3A06049F2BF13CF3007EE6A9 /* pollenAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A06049E2BF13CF3007EE6A9 /* pollenAppApp.swift */; };
+		3A0604A32BF13CF5007EE6A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A0604A22BF13CF5007EE6A9 /* Assets.xcassets */; };
+		3A0604A62BF13CF5007EE6A9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A0604A52BF13CF5007EE6A9 /* Preview Assets.xcassets */; };
+		3A0604BA2BF14C3E007EE6A9 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A0604B92BF14C3D007EE6A9 /* WidgetKit.framework */; };
+		3A0604BC2BF14C3E007EE6A9 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A0604BB2BF14C3E007EE6A9 /* SwiftUI.framework */; };
+		3A0604BF2BF14C3E007EE6A9 /* pollenWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0604BE2BF14C3E007EE6A9 /* pollenWidgetBundle.swift */; };
+		3A0604C32BF14C3E007EE6A9 /* pollenWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0604C22BF14C3E007EE6A9 /* pollenWidget.swift */; };
+		3A0604C72BF14C40007EE6A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A0604C62BF14C40007EE6A9 /* Assets.xcassets */; };
+		3A0604CB2BF14C40007EE6A9 /* pollenWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 3A0604B72BF14C3D007EE6A9 /* pollenWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		3A0604D12BF14CDE007EE6A9 /* pollenWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0604C22BF14C3E007EE6A9 /* pollenWidget.swift */; };
+		3A0604D32BF14E9D007EE6A9 /* PollenForecastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A06048E2BF13C2E007EE6A9 /* PollenForecastView.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3A0604C92BF14C40007EE6A9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3A0604732BF134B9007EE6A9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3A0604B62BF14C3D007EE6A9;
+			remoteInfo = pollenWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3A0604CF2BF14C40007EE6A9 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				3A0604CB2BF14C40007EE6A9 /* pollenWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		3A06047B2BF134B9007EE6A9 /* pollenView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pollenView.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		3A06047E2BF134B9007EE6A9 /* pollenViewApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pollenViewApp.swift; sourceTree = "<group>"; };
-		3A0604802BF134B9007EE6A9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		3A0604822BF134B9007EE6A9 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		3A0604842BF134BB007EE6A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A0604872BF134BB007EE6A9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		3A06048E2BF13C2E007EE6A9 /* PollenForecastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollenForecastView.swift; sourceTree = "<group>"; };
+		3A0604902BF13C98007EE6A9 /* pollenApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pollenApp.swift; sourceTree = "<group>"; };
+		3A0604992BF13CF3007EE6A9 /* pollenApp Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "pollenApp Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A06049E2BF13CF3007EE6A9 /* pollenAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pollenAppApp.swift; sourceTree = "<group>"; };
+		3A0604A22BF13CF5007EE6A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3A0604A52BF13CF5007EE6A9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		3A0604B72BF14C3D007EE6A9 /* pollenWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = pollenWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A0604B92BF14C3D007EE6A9 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		3A0604BB2BF14C3E007EE6A9 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		3A0604BE2BF14C3E007EE6A9 /* pollenWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pollenWidgetBundle.swift; sourceTree = "<group>"; };
+		3A0604C22BF14C3E007EE6A9 /* pollenWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pollenWidget.swift; sourceTree = "<group>"; };
+		3A0604C62BF14C40007EE6A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3A0604C82BF14C40007EE6A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A0604D22BF14E36007EE6A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +76,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3A0604962BF13CF3007EE6A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A0604B42BF14C3D007EE6A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A0604BC2BF14C3E007EE6A9 /* SwiftUI.framework in Frameworks */,
+				3A0604BA2BF14C3E007EE6A9 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -38,6 +99,9 @@
 			isa = PBXGroup;
 			children = (
 				3A06047D2BF134B9007EE6A9 /* pollenView */,
+				3A06049D2BF13CF3007EE6A9 /* pollenApp Watch App */,
+				3A0604BD2BF14C3E007EE6A9 /* pollenWidget */,
+				3A0604B82BF14C3D007EE6A9 /* Frameworks */,
 				3A06047C2BF134B9007EE6A9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -46,6 +110,8 @@
 			isa = PBXGroup;
 			children = (
 				3A06047B2BF134B9007EE6A9 /* pollenView.app */,
+				3A0604992BF13CF3007EE6A9 /* pollenApp Watch App.app */,
+				3A0604B72BF14C3D007EE6A9 /* pollenWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -53,9 +119,9 @@
 		3A06047D2BF134B9007EE6A9 /* pollenView */ = {
 			isa = PBXGroup;
 			children = (
-				3A06047E2BF134B9007EE6A9 /* pollenViewApp.swift */,
-				3A0604802BF134B9007EE6A9 /* ContentView.swift */,
-				3A0604822BF134B9007EE6A9 /* Item.swift */,
+				3A0604D22BF14E36007EE6A9 /* Info.plist */,
+				3A06048E2BF13C2E007EE6A9 /* PollenForecastView.swift */,
+				3A0604902BF13C98007EE6A9 /* pollenApp.swift */,
 				3A0604842BF134BB007EE6A9 /* Assets.xcassets */,
 				3A0604862BF134BB007EE6A9 /* Preview Content */,
 			);
@@ -70,6 +136,44 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		3A06049D2BF13CF3007EE6A9 /* pollenApp Watch App */ = {
+			isa = PBXGroup;
+			children = (
+				3A06049E2BF13CF3007EE6A9 /* pollenAppApp.swift */,
+				3A0604A22BF13CF5007EE6A9 /* Assets.xcassets */,
+				3A0604A42BF13CF5007EE6A9 /* Preview Content */,
+			);
+			path = "pollenApp Watch App";
+			sourceTree = "<group>";
+		};
+		3A0604A42BF13CF5007EE6A9 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				3A0604A52BF13CF5007EE6A9 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		3A0604B82BF14C3D007EE6A9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3A0604B92BF14C3D007EE6A9 /* WidgetKit.framework */,
+				3A0604BB2BF14C3E007EE6A9 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3A0604BD2BF14C3E007EE6A9 /* pollenWidget */ = {
+			isa = PBXGroup;
+			children = (
+				3A0604BE2BF14C3E007EE6A9 /* pollenWidgetBundle.swift */,
+				3A0604C22BF14C3E007EE6A9 /* pollenWidget.swift */,
+				3A0604C62BF14C40007EE6A9 /* Assets.xcassets */,
+				3A0604C82BF14C40007EE6A9 /* Info.plist */,
+			);
+			path = pollenWidget;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -80,15 +184,51 @@
 				3A0604772BF134B9007EE6A9 /* Sources */,
 				3A0604782BF134B9007EE6A9 /* Frameworks */,
 				3A0604792BF134B9007EE6A9 /* Resources */,
+				3A0604CF2BF14C40007EE6A9 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				3A0604CA2BF14C40007EE6A9 /* PBXTargetDependency */,
 			);
 			name = pollenView;
 			productName = pollenView;
 			productReference = 3A06047B2BF134B9007EE6A9 /* pollenView.app */;
 			productType = "com.apple.product-type.application";
+		};
+		3A0604982BF13CF3007EE6A9 /* pollenApp Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3A0604A72BF13CF5007EE6A9 /* Build configuration list for PBXNativeTarget "pollenApp Watch App" */;
+			buildPhases = (
+				3A0604952BF13CF3007EE6A9 /* Sources */,
+				3A0604962BF13CF3007EE6A9 /* Frameworks */,
+				3A0604972BF13CF3007EE6A9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "pollenApp Watch App";
+			productName = "pollenApp Watch App";
+			productReference = 3A0604992BF13CF3007EE6A9 /* pollenApp Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3A0604B62BF14C3D007EE6A9 /* pollenWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3A0604CC2BF14C40007EE6A9 /* Build configuration list for PBXNativeTarget "pollenWidgetExtension" */;
+			buildPhases = (
+				3A0604B32BF14C3D007EE6A9 /* Sources */,
+				3A0604B42BF14C3D007EE6A9 /* Frameworks */,
+				3A0604B52BF14C3D007EE6A9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = pollenWidgetExtension;
+			productName = pollenWidgetExtension;
+			productReference = 3A0604B72BF14C3D007EE6A9 /* pollenWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -101,6 +241,12 @@
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					3A06047A2BF134B9007EE6A9 = {
+						CreatedOnToolsVersion = 15.0.1;
+					};
+					3A0604982BF13CF3007EE6A9 = {
+						CreatedOnToolsVersion = 15.0.1;
+					};
+					3A0604B62BF14C3D007EE6A9 = {
 						CreatedOnToolsVersion = 15.0.1;
 					};
 				};
@@ -119,6 +265,8 @@
 			projectRoot = "";
 			targets = (
 				3A06047A2BF134B9007EE6A9 /* pollenView */,
+				3A0604982BF13CF3007EE6A9 /* pollenApp Watch App */,
+				3A0604B62BF14C3D007EE6A9 /* pollenWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -133,6 +281,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3A0604972BF13CF3007EE6A9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A0604A62BF13CF5007EE6A9 /* Preview Assets.xcassets in Resources */,
+				3A0604A32BF13CF5007EE6A9 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A0604B52BF14C3D007EE6A9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A0604C72BF14C40007EE6A9 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -140,13 +305,39 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A0604812BF134B9007EE6A9 /* ContentView.swift in Sources */,
-				3A0604832BF134B9007EE6A9 /* Item.swift in Sources */,
-				3A06047F2BF134B9007EE6A9 /* pollenViewApp.swift in Sources */,
+				3A06048F2BF13C2E007EE6A9 /* PollenForecastView.swift in Sources */,
+				3A0604D12BF14CDE007EE6A9 /* pollenWidget.swift in Sources */,
+				3A0604912BF13C98007EE6A9 /* pollenApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A0604952BF13CF3007EE6A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A06049F2BF13CF3007EE6A9 /* pollenAppApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A0604B32BF14C3D007EE6A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A0604C32BF14C3E007EE6A9 /* pollenWidget.swift in Sources */,
+				3A0604BF2BF14C3E007EE6A9 /* pollenWidgetBundle.swift in Sources */,
+				3A0604D32BF14E9D007EE6A9 /* PollenForecastView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3A0604CA2BF14C40007EE6A9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3A0604B62BF14C3D007EE6A9 /* pollenWidgetExtension */;
+			targetProxy = 3A0604C92BF14C40007EE6A9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		3A0604892BF134BB007EE6A9 /* Debug */ = {
@@ -271,6 +462,7 @@
 		3A06048C2BF134BB007EE6A9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -279,6 +471,7 @@
 				DEVELOPMENT_TEAM = BHJSDBBPS7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = pollenView/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -300,6 +493,7 @@
 		3A06048D2BF134BB007EE6A9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -308,6 +502,7 @@
 				DEVELOPMENT_TEAM = BHJSDBBPS7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = pollenView/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -320,6 +515,120 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = samroman.pollenView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		3A0604A82BF13CF5007EE6A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"pollenApp Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = BHJSDBBPS7;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = pollenApp;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKWatchOnly = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = samroman.pollenApp.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Debug;
+		};
+		3A0604A92BF13CF5007EE6A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"pollenApp Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = BHJSDBBPS7;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = pollenApp;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKWatchOnly = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = samroman.pollenApp.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Release;
+		};
+		3A0604CD2BF14C40007EE6A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BHJSDBBPS7;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = pollenWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = pollenWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = samroman.pollenView.pollenWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3A0604CE2BF14C40007EE6A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BHJSDBBPS7;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = pollenWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = pollenWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = samroman.pollenView.pollenWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -343,6 +652,24 @@
 			buildConfigurations = (
 				3A06048C2BF134BB007EE6A9 /* Debug */,
 				3A06048D2BF134BB007EE6A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3A0604A72BF13CF5007EE6A9 /* Build configuration list for PBXNativeTarget "pollenApp Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A0604A82BF13CF5007EE6A9 /* Debug */,
+				3A0604A92BF13CF5007EE6A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3A0604CC2BF14C40007EE6A9 /* Build configuration list for PBXNativeTarget "pollenWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A0604CD2BF14C40007EE6A9 /* Debug */,
+				3A0604CE2BF14C40007EE6A9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
